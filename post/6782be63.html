@@ -178,11 +178,14 @@
 <h2 id="3、docker能做什么"><a href="#3、docker能做什么" class="headerlink" title="3、docker能做什么"></a>3、docker能做什么</h2><blockquote>
 <p>之前的虚拟机技术</p>
 </blockquote>
-<p><img src="Docker%E5%AD%A6%E4%B9%A0/1677857891414-3274d399-87c8-4403-854b-e2a972d29bd8.png" alt="image.png"><br>缺点：<br>1、资源占用很多<br>2、冗余步骤多<br>3、启动很慢</p>
+<img src="/post/6782be63/1677857891414-3274d399-87c8-4403-854b-e2a972d29bd8.png" class="" title="image.png">
+<p>缺点：<br>1、资源占用很多<br>2、冗余步骤多<br>3、启动很慢</p>
 <blockquote>
 <p>容器化技术</p>
 </blockquote>
-<p>容器化技术不是模拟的完整的操作系统<br><img src="Docker%E5%AD%A6%E4%B9%A0/1677857985468-558e266a-4210-4b7f-917e-9b320ba77702.png" alt="image.png"><br>比较Docker和虚拟机技术的不同：</p>
+<p>容器化技术不是模拟的完整的操作系统</p>
+<img src="/post/6782be63/1677857985468-558e266a-4210-4b7f-917e-9b320ba77702.png" class="" title="image.png">
+<p>比较Docker和虚拟机技术的不同：</p>
 <ul>
 <li>传统虚拟机，虚拟出一条硬件，运行一个完整的操作系统，然后在这个系统上安装和运行软件。</li>
 <li>容器内的应用直接运行在宿主机的内核中，容器是没有自己的内核的，也没有虚拟我们的硬件，所以就轻便了。</li>
@@ -210,7 +213,9 @@
 </blockquote>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">卸载旧的版本：</span></span><br><span class="line">yum remove docker</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装新版本</span></span><br><span class="line">yum install -y yum-utils</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置镜像仓库</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 国外</span></span></span><br><span class="line">1. yum-config-manager \</span><br><span class="line">        --add-repo \</span><br><span class="line">        https://download.docker.com/linux/centos/docker-ce.repo # 默认是从国外的。</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">#国内</span></span></span><br><span class="line">2.yum-config-manager \</span><br><span class="line">      --add-repo \</span><br><span class="line">      http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo ####推荐使用阿里云的。</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装容器之前，更新yum软件包索引：</span> </span><br><span class="line">yum makecache fast</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装容器相关：er-ce（社区版）docker-ee（企业版）：</span></span><br><span class="line">yum install docker-ce docker-ce-cli containerd.io</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动docker命令:</span></span><br><span class="line">systemctl start docker</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看是否安装成功：</span></span><br><span class="line">docker version</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>镜像文件<br><img src="Docker%E5%AD%A6%E4%B9%A0/1678242124168-18112874-bea8-4d1d-a86c-d610935a7565.png" alt="image.png"></p>
+<p>镜像文件</p>
+<img src="/post/6782be63/1678242124168-18112874-bea8-4d1d-a86c-d610935a7565.png" class="" title="image.png">
+
 <blockquote>
 <p>卸载</p>
 </blockquote>
@@ -223,17 +228,22 @@
 <blockquote>
 <p>配置阿里云加速镜像</p>
 </blockquote>
-<p><img src="Docker%E5%AD%A6%E4%B9%A0/1678242729538-c071989e-f6ed-459d-a7c6-7d04340bc4e3.png" alt="image.png"></p>
+<img src="/post/6782be63/1678242729538-c071989e-f6ed-459d-a7c6-7d04340bc4e3.png" class="" title="image.png">
+
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /etc/docker</span><br><span class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https://ui7yw1xi.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>hello-world的测试运行流程</p>
 </blockquote>
-<p>docker run hello-world<br>hello-world流程<br><img src="Docker%E5%AD%A6%E4%B9%A0/1678242889538-e58f640d-78dc-4d51-a9c8-a72e63daa6cc.png" alt="image.png"></p>
+<p>docker run hello-world<br>hello-world流程</p>
+<img src="/post/6782be63/1678242889538-e58f640d-78dc-4d51-a9c8-a72e63daa6cc.png" class="" title="image.png">
+
 <blockquote>
 <p>底层原理    </p>
 </blockquote>
-<h3 id="2-1、docker的底层原理"><a href="#2-1、docker的底层原理" class="headerlink" title="2.1、docker的底层原理"></a>2.1、docker的底层原理</h3><h4 id="2-1-1、Docker是怎么工作的？"><a href="#2-1-1、Docker是怎么工作的？" class="headerlink" title="2.1.1、Docker是怎么工作的？"></a>2.1.1、Docker是怎么工作的？</h4><p>Docker 是一个Client-Server结构的系统，Docker的守护进程运行在主机上。通过Socket从客户端访问！<br>DockerServer 接收到Docker-Client的指令，就会执行这个命令！<br>流程图：<br><img src="Docker%E5%AD%A6%E4%B9%A0/1678243109270-e75456c5-40bc-4714-bc95-68e25227b108.png" alt="image.png"></p>
+<h3 id="2-1、docker的底层原理"><a href="#2-1、docker的底层原理" class="headerlink" title="2.1、docker的底层原理"></a>2.1、docker的底层原理</h3><h4 id="2-1-1、Docker是怎么工作的？"><a href="#2-1-1、Docker是怎么工作的？" class="headerlink" title="2.1.1、Docker是怎么工作的？"></a>2.1.1、Docker是怎么工作的？</h4><p>Docker 是一个Client-Server结构的系统，Docker的守护进程运行在主机上。通过Socket从客户端访问！<br>DockerServer 接收到Docker-Client的指令，就会执行这个命令！<br>流程图：</p>
+<img src="/post/6782be63/1678243109270-e75456c5-40bc-4714-bc95-68e25227b108.png" class="" title="image.png">
+
 <h4 id="2-1-2、docker为什么比vm快"><a href="#2-1-2、docker为什么比vm快" class="headerlink" title="2.1.2、docker为什么比vm快"></a>2.1.2、docker为什么比vm快</h4><ol>
 <li>Docker有着比虚拟机更少的抽象层。</li>
 <li>docker利用的是宿主机的内核，vm需要是Guest OS</li>
